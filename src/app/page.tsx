@@ -11,7 +11,7 @@ export default function Home() {
 
     return (
         <div
-            className={'min-h-[200vh] py-24 flex flex-col items-center px-8 relative after:fixed after:inset-0 after:pointer-events-none after:bg-gradient-to-b after:from-transparent after:via-transparent after:to-pink-600/20'}>
+            className={'min-h-[200vh] py-24 flex flex-col items-center px-8 relative'}>
 
             <h1 className={'text-center text-[12vw] leading-[1.2] font-bold font-heading text-rose-500 text-stroke]'}>
                 <div>
