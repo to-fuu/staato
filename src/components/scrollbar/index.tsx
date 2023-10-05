@@ -4,6 +4,7 @@ import {useLenis} from '@studio-freight/react-lenis'
 import {useEffect, useRef, useState} from 'react'
 import {clamp, mapRange} from "@/lib/math";
 import s from './scrollbar.module.scss'
+import {usePathname} from "next/navigation";
 
 export function Scrollbar() {
     const thumb = useRef<HTMLDivElement>()
@@ -12,8 +13,28 @@ export function Scrollbar() {
     const [innerMeasureRef, {height: innerHeight}] = useRect()
     const [thumbMeasureRef, {height: thumbHeight}] = useRect()
 
+    const pathname = usePathname()
+    useEffect(() => {
+        if (!lenis) return
+        if (document.body.clientHeight <= windowHeight) {
+            lenis.scrollTo(0, {duration: 0})
+            lenis.stop()
+            if (thumb.current)
+                thumb.current.style.display = 'none'
+        } else {
+            if (thumb.current)
+                thumb.current.style.display = 'block'
+            lenis.start()
+        }
+
+
+    }, [windowHeight, lenis, pathname,thumb]);
+
     useLenis(
-        ({scroll, limit}) => {
+        ({scroll, limit, stop, start}) => {
+
+
+            console.log()
             const progress = scroll / limit
             if (thumb.current)
                 (thumb.current as HTMLDivElement).style.transform = `translate3d(0,${progress * (innerHeight - thumbHeight)}px,0)`
