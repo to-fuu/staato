@@ -11,13 +11,13 @@ export const initParallax = () => {
         const speed = Number.parseFloat(el.dataset['speed'] || '0')
         const fade = el.dataset['fade'] === 'true'
         const opacityOffset = Number.parseFloat(el.dataset['opacityOffset'] || '0')
-
+        const scrollStartOffset = Number.parseFloat(el.dataset['scrollOffset'] || '0')
 
         gsap.to(el, {
             scrollTrigger: {
                 scrub: 0.5,
                 trigger: el,
-                start: 'top ' + el.offsetTop,
+                start: 'top ' + (el.offsetTop + scrollStartOffset),
             },
             y: () => direction === 'horizontal' ? 0 : (-ScrollTrigger.maxScroll(window)) * speed / 10,
             x: () => direction === 'vertical' ? 0 : (-ScrollTrigger.maxScroll(window)) * speed / 10,
