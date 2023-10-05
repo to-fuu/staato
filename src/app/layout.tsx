@@ -29,6 +29,8 @@ export default function RootLayout({children,}:
         <PageWrapper>
             <main>
 
+                <div className="fixed inset-x-0 top-0 h-screen bg-gradient-to-b from-transparent via-transparent to-rose-950/75"></div>
+
                 <nav className={'text fixed inset-x-0 py-8 text-2xl z-[999]'}>
 
                     <div className="flex px-12 items-center gap-2">
