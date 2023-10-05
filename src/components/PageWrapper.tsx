@@ -20,7 +20,6 @@ export default function PageWrapper({children}: { children?: ReactNode }) {
 
         gsap.registerPlugin(ScrollTrigger);
 
-        initParallax()
     }, [mounted]);
 
 
@@ -32,6 +31,8 @@ export default function PageWrapper({children}: { children?: ReactNode }) {
             opacity: 1, y: 0,
             ease:'power1.out'
         })
+        initParallax()
+
     }, [pathname]);
 
     return <ReactLenis root>
