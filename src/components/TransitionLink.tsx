@@ -8,7 +8,7 @@ import Link from "next/link";
 export const FinishPageTransition = () => {
 
     gsap.to('.transition-new-page', {
-        top: "-100%"
+        top: "-100%",delay:0.3
     })
 
 }
