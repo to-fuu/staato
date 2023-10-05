@@ -32,6 +32,10 @@ export default function Menu() {
             zIndex: 1
         })
 
+        gsap.set('#menu-animation-bg', {
+            right: -500
+        })
+
     }
     const Close = () => {
 
