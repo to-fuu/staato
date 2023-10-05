@@ -1,13 +1,7 @@
 'use client'
 
-import {useEffect} from "react";
-import {FinishPageTransition} from "@/components/TransitionLink";
-
 export default function Page2() {
 
-    useEffect(() => {
-        FinishPageTransition()
-    }, []);
 
     return (
         <div
