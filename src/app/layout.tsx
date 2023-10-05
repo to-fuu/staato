@@ -4,6 +4,7 @@ import {Dela_Gothic_One, Prompt} from 'next/font/google'
 import PageWrapper from "@/components/PageWrapper";
 import TransitionLink from "@/components/TransitionLink";
 import Menu from "@/components/Menu";
+import Link from "next/link";
 
 const delaGothicOne = Dela_Gothic_One({
     subsets: ['latin'], weight: ['400'],
@@ -37,10 +38,9 @@ export default function RootLayout({children,}:
                             Home
                         </TransitionLink>
 
-                        <TransitionLink href={'#' +
-                            ''} className={''}>
+                        <Link href={'https://github.com/to-fuu/staato'} target={'_blank'} rel={'noreferrer noopener'} className={''}>
                             Github
-                        </TransitionLink>
+                        </Link>
 
                         <Menu/>
 
