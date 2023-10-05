@@ -1,0 +1,46 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 99999;
+  pointer-events: none;
+  overflow: hidden;
+
+  .cursor {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 999px;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    opacity: 0.8;
+    transition: transform 600ms ease, background-color 300ms ease, width 300ms ease, height 300ms ease, box-shadow 300ms ease, border-radius 300ms ease;
+
+    &.pointer {
+      width: 48px;
+      height: 48px;
+      opacity: 0.3;
+    }
+
+    &.project {
+      background-color: transparent;
+      opacity: 1;
+      box-shadow: 0 0 0 4px white;
+      width: 40px;
+      height: 40px;
+    }
+
+    &.text {
+      width: 4px;
+      height: 32px;
+      border-radius: 0;
+      opacity: 1;
+    }
+  }
+
+  @media (hover: none) {
+    display: none;
+  }
+}

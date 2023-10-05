@@ -1,0 +1,50 @@
+
+.scrollbar {
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 4;
+  //padding: desktop-vw(24px) 0;
+
+  .inner {
+    height: 100%;
+    position: relative;
+    background: transparent;
+  }
+
+  .thumb {
+    min-height: 64px;
+    width: 8px;
+    position: absolute;
+    right: 2px;
+    border-radius: 99px;
+    transition: width 0.3s ease;
+    cursor: grab;
+
+    &:hover {
+
+
+      &:after {
+        top: 12px;
+        bottom: 12px;
+        left: -2px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset-inline: 0;
+      inset-block: 4px;
+      border-radius: 99px;
+      transition: top 0.3s ease, bottom 0.3s ease, left 0.3s ease;
+      @apply bg-rose-500
+    }
+  }
+
+  //@include mobile {
+  //  display: none;
+  //}
+}
