@@ -29,7 +29,6 @@ export default function RootLayout({children,}:
         <PageWrapper>
             <main>
 
-                <div className="fixed inset-x-0 top-0 h-screen bg-gradient-to-b from-transparent via-transparent to-rose-950/75"></div>
 
                 <nav className={'text fixed inset-x-0 py-8 text-2xl z-[999]'}>
 
@@ -52,6 +51,8 @@ export default function RootLayout({children,}:
                 {children}
             </main>
         </PageWrapper>
+        <div className="fixed inset-x-0 top-0 h-screen bg-gradient-to-b from-transparent via-transparent to-rose-950 pointer-events-none mix-blend-plus-lighter"/>
+
         </body>
         </html>
     )
