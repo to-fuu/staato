@@ -8,12 +8,13 @@ import {useMounted} from "@/hooks/useMounted";
 import gsap from "gsap"
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import {initParallax} from "@/lib/gsap-utils";
+import {usePathname} from "next/navigation";
 
 
 export default function PageWrapper({children}: { children?: ReactNode }) {
 
     const mounted = useMounted()
-
+    const pathname = usePathname()
     useEffect(() => {
         if (mounted) return
 
@@ -21,6 +22,17 @@ export default function PageWrapper({children}: { children?: ReactNode }) {
 
         initParallax()
     }, [mounted]);
+
+
+    useEffect(() => {
+        gsap.fromTo('main', {
+            opacity: 0,
+            y: 120
+        }, {
+            opacity: 1, y: 0,
+            ease:'power1.out'
+        })
+    }, [pathname]);
 
     return <ReactLenis root>
         {children}
@@ -30,7 +42,7 @@ export default function PageWrapper({children}: { children?: ReactNode }) {
 
 
         <div className="transition-border fixed inset-0 pointer-events-none border-stone-950"></div>
-        <div className="transition-new-page fixed inset-x-0 h-screen top-full bg-white pointer-events-none "></div>
+        <div className="transition-new-page fixed inset-x-0 h-screen top-full bg-rose-500 pointer-events-none "></div>
 
 
     </ReactLenis>
