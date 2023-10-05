@@ -14,15 +14,14 @@ export default function Home() {
             className={'min-h-[200vh] py-24 flex flex-col items-center px-8 relative'}>
 
             <h1 className={'text-center text-[12vw] leading-[1.2] font-bold font-heading text-rose-500 text-stroke]'}>
-                <div>
-                    <Parallax speed={0.3}>P</Parallax>O<Parallax speed={0.3}>RT</Parallax>FO<Parallax
-                    speed={0.5}>LIO</Parallax>
+                <div className={'flex  justify-center items-center'}>
+                   ST<Parallax speed={0.3}>A</Parallax><Parallax speed={0.4}>A</Parallax><Parallax speed={0.5}>A</Parallax>TO
                 </div>
 
-                <div>
-                    S<Parallax speed={0.4} className={'inline-block'}>T</Parallax>A<Parallax
-                    speed={0.3}>RT</Parallax>E<Parallax
-                    speed={0.5}>R</Parallax>
+                <div className={'flex justify-center items-center'}>
+                    <Parallax speed={0.4} className={'inline-block'}>T</Parallax>E<Parallax
+                    speed={0.3}>MP</Parallax>LA<Parallax
+                    speed={0.5}>TE</Parallax>
                 </div>
 
             </h1>
