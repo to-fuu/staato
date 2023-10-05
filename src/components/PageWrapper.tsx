@@ -7,6 +7,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import {useMounted} from "@/hooks/useMounted";
 import gsap from "gsap"
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
+import {initParallax} from "@/lib/gsap-utils";
 
 
 export default function PageWrapper({children}: { children?: ReactNode }) {
@@ -18,7 +19,7 @@ export default function PageWrapper({children}: { children?: ReactNode }) {
 
         gsap.registerPlugin(ScrollTrigger);
 
-        // handleScroll()
+        initParallax()
     }, [mounted]);
 
     return <ReactLenis root>
