@@ -27,6 +27,7 @@ export default function RootLayout({children,}:
     return (
         <html lang="en">
         <body className={`${delaGothicOne.variable} ${prompt.variable} font-sans`}>
+        <div className="fixed inset-x-0 top-0 h-screen bg-gradient-to-b from-transparent via-transparent to-rose-950 pointer-events-none mix-blend-plus-lighter"/>
         <PageWrapper>
             <main>
 
@@ -51,7 +52,6 @@ export default function RootLayout({children,}:
                 {children}
             </main>
         </PageWrapper>
-        <div className="fixed inset-x-0 top-0 h-screen bg-gradient-to-b from-transparent via-transparent to-rose-950 pointer-events-none mix-blend-plus-lighter"/>
 
         </body>
         </html>
