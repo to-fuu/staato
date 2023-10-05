@@ -19,6 +19,7 @@ export default function TransitionLink({children, href, className}: {
     className?: string
 }) {
 
+    const pathFromHref = new URL(href, 'http://localhost:3000').pathname
     const router = useRouter()
     const pathname = usePathname()
     const lenis = useLenis()
@@ -26,7 +27,7 @@ export default function TransitionLink({children, href, className}: {
 
         e.preventDefault()
 
-        if (pathname === href) {
+        if (pathname === pathFromHref || pathname === '#') {
             lenis.scrollTo(0)
             return
         }
@@ -64,6 +65,7 @@ export default function TransitionLink({children, href, className}: {
         })
     }
     return <Link href={href} onClick={handleNavigation} className={className}>
+
         {children}
     </Link>
 
